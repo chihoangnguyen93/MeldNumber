@@ -1,8 +1,16 @@
-# Only-Color
-This is a funny game. Players will find a way to transform all cells into one color. I created 200 levels, which increase from easy to hard
-
-<img width="320" alt="screen1" src="https://user-images.githubusercontent.com/15699560/130363444-64403e49-fa6d-4ce9-bee9-0a9ddd4b3946.png">
-<img width="320" alt="screen2" src="https://user-images.githubusercontent.com/15699560/130363451-32f538cd-8c0d-4947-8e6e-af13f1debfc0.png">
-<img width="320" alt="screen3" src="https://user-images.githubusercontent.com/15699560/130363452-7fa49243-be05-44ee-b9d3-07de03010654.png">
-<img width="320" alt="screen4" src="https://user-images.githubusercontent.com/15699560/130363454-86a3a674-b08a-4b40-8f42-6fd426bd2d06.png">
 # Meld
+
+Work progress:
+
+| Step | Desciption | Status |
+| --- | --- | --- |
+| Step 1 | Set up project | Done |
+| Step 2 | Build game board | Done |
+| Step 3 | Build supply board, that board supply number | Done |
+| Step 4 | Add logic rotation pair number | Done |
+| Step 5 | Add touch logic. Allow user move number from supply board to game board | Done |
+| Step 6 | Add logic checking number is already added in game board  | Done |
+| Step 7 | Add logic check game win, game over | Done |
+| Step 8 | Add random number logic. That allow random number on supply board | Done |
+| Step 9 | Add UI/UX | Done |
+| Step 10 | Test and Game Balance | Done |
