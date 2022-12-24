@@ -21,8 +21,8 @@ void AdmobIOSWrapper::init(const std::string &bannerId, const std::string &inter
   [[AdmobIOS sharedAdmob] setInterstitialId:interstitial];
 }
 
-void AdmobIOSWrapper::showBanner(int position) {
-  [[AdmobIOS sharedAdmob] showBannerInPosition: position];
+void AdmobIOSWrapper::showBanner() {
+  [[AdmobIOS sharedAdmob] showBanner];
 }
 
 void AdmobIOSWrapper::showInterstitial(std::function<void(bool)> completion) {

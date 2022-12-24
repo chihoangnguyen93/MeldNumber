@@ -56,7 +56,7 @@ void GameScene::createGameAndSupplyBoard() {
   gameBoard = new GameBoard(TOTAL_GAME_BOARD_CELL, TOTAL_GAME_BOARD_CELL);
   Vec2 gameBoardPosition = Vec2((winSize.width - TOTAL_GAME_BOARD_CELL * WIDTH_HEIGHT_CELL)/2.0,
                                 (winSize.height - TOTAL_GAME_BOARD_CELL * WIDTH_HEIGHT_CELL) /2.0
-                                + DISTANCE_64_PIXEL);
+                                + DISTANCE_80_PIXEL);
   gameBoard->setPosition(gameBoardPosition);
   gameBoard->drawBoard();
   this->addChild(gameBoard);
@@ -107,7 +107,7 @@ void GameScene::createHeaderLayer() {
                                    gameBoard->getPositionY()
                                    + TOTAL_GAME_BOARD_CELL * WIDTH_HEIGHT_CELL
                                    + earnPointLabel->getContentSize().height/2.0
-                                   + DISTANCE_48_PIXEL));
+                                   + DISTANCE_32_PIXEL));
   earnPointLabel->setColor(ColorFactory::GetInstance()->getTitleLabelColor());
   earnPointLabel->setVisible(true);
   this->addChild(earnPointLabel);
@@ -183,7 +183,7 @@ void GameScene::displayHowToPlayLayer() {
   touchGuideLayer->onTouchBegan = [=](Touch* mtouch, Event* pEvent){
     guideLayer->removeFromParent();
     /// Show admod
-    AdmobManager::getInstance()->showBanner(AdmobPosition::TopCenter);
+    AdmobManager::getInstance()->showBanner();
     showFullScreenAdvertisement(AD_OPEN_GAME_SCENE_KEY, AD_OPEN_GAME_SCENE_FREQUENCY);
     return true;
   };
@@ -246,9 +246,6 @@ void GameScene::handleTapOnSkipButton(Ref* pSender) {
   if(numberSkip >= 0) {
     gameManager->skipCurrentNumber();
   } else {
-//    #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-//    displayShowAdToGetMoreSkipTurn();
-//    #endif
   }
 }
 
@@ -267,39 +264,6 @@ void GameScene::showFullScreenAdvertisement(const char* key, int frequency) {
   }
 }
 
-void GameScene::displayShowAdToGetMoreSkipTurn() {
-  if(this->getChildByTag(AD_POP_UP) != nullptr) {
-    this->removeChildByTag(AD_POP_UP);
-  }
-  /// adLayer set up
-  LayerColor* adLayer = createLayerColor();
-  adLayer->setTag(AD_POP_UP);
-  this->addChild(adLayer);
-  
-  Label* titleLabel = Label::createWithTTF(TITLE_AD_POP_UP, FONT_NAME_TILE_LABEL, FONT_32_SIZE);
-  titleLabel->setPosition(Vec2(winSize.width/2.0, winSize.height/2.0));
-  titleLabel->setColor(ColorFactory::GetInstance()->getTitleLabelColor());
-  adLayer->addChild(titleLabel);
-  
-  auto noButton = CustomButton::create(NO_BUTTON_IMAGE_NAME, CC_CALLBACK_1(GameScene::handleTapOnNoButton,this));
-  noButton->setPosition(Vec2(winSize.width/2.0 - DISTANCE_48_PIXEL,
-                             winSize.height/2.0
-                             - DISTANCE_64_PIXEL));
-  noButton->setTag(NO_BUTTON);
-  adLayer->addChild(noButton);
-  
-  auto okayButton = CustomButton::create(OKAY_BUTTON_IMAGE_NAME, CC_CALLBACK_1(GameScene::handleTapOnOkayButton,this));
-  okayButton->setPosition(Vec2(winSize.width/2.0 + DISTANCE_48_PIXEL,
-                               noButton->getPositionY()));
-  noButton->setTag(OKAY_BUTTON);
-  adLayer->addChild(okayButton);
-  
-  /// Handle touch on game over layer
-  auto touchAdLayer = EventListenerTouchOneByOne::create();
-  touchAdLayer->setSwallowTouches(true);
-  touchAdLayer->onTouchBegan = [=](Touch* mtouch, Event* pEvent){ return true; };
-  Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchAdLayer, adLayer);
-}
 
 void GameScene::handleTapOnNoButton(Ref* pSender) {
   this->removeChildByTag(AD_POP_UP);

@@ -16,43 +16,38 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 public class AndroidAdManager {
     private Activity activity;
-    private static AdView bannerAdView;
-    private static boolean bannerAdViewShowing = false;
-    private String bannerId;
+    private static AdView top_bannerView;
+    private static AdView bottom_bannerView;
+    private static boolean top_bannerViewShowing = false;
+    private static boolean bottom_bannerViewShowing = false;
+    private String top_bannerId;
+    private String bottom_bannerId;
     private String interstitialId;
 
     public AndroidAdManager(Activity activity) {
         this.activity = activity;
-        bannerId = activity.getBaseContext().getString(R.string.bannerId);
+        top_bannerId = activity.getBaseContext().getString(R.string.top_bannerId);
+        bottom_bannerId = activity.getBaseContext().getString(R.string.bottom_bannerId);
         interstitialId = activity.getBaseContext().getString(R.string.interstitialId);
         setupAdBannerView();
     }
 
     public void onDestroy() {
-        bannerAdView.destroy();
+        top_bannerView.destroy();
+        bottom_bannerView.destroy();
     }
 
     public void showBannerAd() {
-        if (bannerAdView != null) {
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (!bannerAdViewShowing) {
-                        bannerAdView.loadAd(new AdRequest.Builder().build());
-                        bannerAdViewShowing = true;
-                    }
-                    if (!bannerAdView.isEnabled()) {
-                        bannerAdView.setEnabled(true);
-                    }
-                    if (bannerAdView.getVisibility() == View.INVISIBLE) {
-                        bannerAdView.setVisibility(View.VISIBLE);
-                    }
-                }
-            });
-        }
+        showTopBannerAd();
+        showBottomBannerAd();
     }
 
-    public void showFullscreenAd() {
+    public void hideBanner() {
+        hideBanner(top_bannerView);
+        hideBanner(bottom_bannerView);
+    }
+
+    public void showInterstitial() {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -61,7 +56,6 @@ public class AndroidAdManager {
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                         interstitialAd.show(activity);
                     }
-
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                     }
@@ -71,26 +65,81 @@ public class AndroidAdManager {
     }
 
     private void setupAdBannerView() {
-        bannerAdView = new AdView(activity);
-        bannerAdView.setAdSize(AdSize.FULL_BANNER);
-        bannerAdView.setAdUnitId(bannerId);
-        FrameLayout.LayoutParams topLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT, android.view.Gravity.TOP | android.view.Gravity.CENTER_HORIZONTAL);
-        bannerAdView.setBackgroundColor(Color.BLACK);
-        bannerAdView.setBackgroundColor(0);
-        activity.addContentView(bannerAdView, topLayoutParams);
-        hideBannerAd();
+        setupTopBannerView();
+        setupBottomAdView();
+        hideBanner();
     }
 
-    private void hideBannerAd() {
-        if (bannerAdView != null) {
+    private void setupTopBannerView() {
+        top_bannerView = new AdView(activity);
+        top_bannerView.setAdSize(AdSize.BANNER);
+        top_bannerView.setAdUnitId(top_bannerId);
+        FrameLayout.LayoutParams topLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT, android.view.Gravity.TOP | android.view.Gravity.CENTER_HORIZONTAL);
+        top_bannerView.setBackgroundColor(Color.BLACK);
+        top_bannerView.setBackgroundColor(0);
+        activity.addContentView(top_bannerView, topLayoutParams);
+    }
+
+    private void setupBottomAdView() {
+        bottom_bannerView = new AdView(activity);
+        bottom_bannerView.setAdSize(AdSize.BANNER);
+        bottom_bannerView.setAdUnitId(bottom_bannerId);
+        FrameLayout.LayoutParams bottom_adParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT, android.view.Gravity.BOTTOM|android.view.Gravity.CENTER_HORIZONTAL);
+        bottom_bannerView.setBackgroundColor(Color.BLACK);
+        bottom_bannerView.setBackgroundColor(0);
+        activity.addContentView(bottom_bannerView, bottom_adParams);
+    }
+
+    public void hideBanner(AdView adView) {
+        if (adView != null) {
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (bannerAdView.isEnabled()) {
-                        bannerAdView.setEnabled(false);
+                    if (adView.isEnabled()) {
+                        adView.setEnabled(false);
                     }
-                    if (bannerAdView.getVisibility() != View.INVISIBLE) {
-                        bannerAdView.setVisibility(View.INVISIBLE);
+                    if (adView.getVisibility() != View.INVISIBLE) {
+                        adView.setVisibility(View.INVISIBLE);
+                    }
+                }
+            });
+        }
+    }
+
+    private void showTopBannerAd() {
+        if (top_bannerView != null) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (!top_bannerViewShowing) {
+                        top_bannerView.loadAd(new AdRequest.Builder().build());
+                        top_bannerViewShowing = true;
+                    }
+                    if (!top_bannerView.isEnabled()) {
+                        top_bannerView.setEnabled(true);
+                    }
+                    if (top_bannerView.getVisibility() == View.INVISIBLE) {
+                        top_bannerView.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+    }
+
+    private void showBottomBannerAd() {
+        if (bottom_bannerView != null) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (!bottom_bannerViewShowing) {
+                        bottom_bannerView.loadAd(new AdRequest.Builder().build());
+                        bottom_bannerViewShowing = true;
+                    }
+                    if (!bottom_bannerView.isEnabled()) {
+                        bottom_bannerView.setEnabled(true);
+                    }
+                    if (bottom_bannerView.getVisibility() == View.INVISIBLE) {
+                        bottom_bannerView.setVisibility(View.VISIBLE);
                     }
                 }
             });

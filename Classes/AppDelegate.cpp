@@ -5,7 +5,7 @@
 #include "AdmobManager.h"
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(640, 960);
+static cocos2d::Size designResolutionSize = cocos2d::Size(640, 1136);
 
 AppDelegate::AppDelegate() {}
 
@@ -48,7 +48,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
   director->setAnimationInterval(1.0 / 60);
   
   // Set the design resolution
-  glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::FIXED_WIDTH);
+  glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
   register_all_packages();
   
   

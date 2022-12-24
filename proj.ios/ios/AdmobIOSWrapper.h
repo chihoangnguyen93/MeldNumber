@@ -14,7 +14,7 @@ class AdmobIOSWrapper {
 public:
   static AdmobIOSWrapper* getInstance();
   void init(const std::string &bannerId, const std::string &interstitialId);
-  void showBanner(int position);
+  void showBanner();
   void showInterstitial(std::function<void(bool)> completion);
 };
 

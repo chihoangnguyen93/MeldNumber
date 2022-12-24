@@ -22,6 +22,7 @@
 #define OUT_OF_GAME_BOARD_MATRIX Vec2(-1, -1)
 
 /// Configure UI
+#define DISTANCE_80_PIXEL 80
 #define DISTANCE_64_PIXEL 64
 #define DISTANCE_48_PIXEL 48
 #define DISTANCE_32_PIXEL 32
@@ -44,17 +45,12 @@
 #define RESET_BUTTON_IMAGE_NAME "reset_button.png"
 #define ROTATE_BUTTON_IMAGE_NAME "rotate_button.png"
 #define REPLAY_BUTTON_IMAGE_NAME "replay_button.png"
-#define OKAY_BUTTON_IMAGE_NAME "okay_button.png"
-#define NO_BUTTON_IMAGE_NAME "no_button.png"
 
 /// Guide
 #define HOW_TO_PLAY_TITLE "Drag the numbers onto the board"
 #define HOW_TO_PLAY_DESCRIPTION_LINE_1 "Place at least 3 same numbers adjacent"
 #define HOW_TO_PLAY_DESCRIPTION_LINE_2 "to merge them."
 #define HOW_TO_PLAY_ACTION_TEXT "Tap anywhere to continue"
-
-/// Admod
-#define TITLE_AD_POP_UP "Watch ad to get more skip turn ?"
 
 #define AD_CLICK_RESET_KEY "AD_CLICK_RESET_KEY"
 #define AD_CLICK_RESET_FREQUENCY 5

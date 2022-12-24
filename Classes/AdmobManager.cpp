@@ -28,9 +28,9 @@ void AdmobManager::init(const std::string &bannerId, const std::string &intersti
 #endif
 }
 
-void AdmobManager::showBanner(AdmobPosition position) {
+void AdmobManager::showBanner() {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-  AdmobIOSWrapper::getInstance()->showBanner((int)position);
+  AdmobIOSWrapper::getInstance()->showBanner();
 #endif
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
   cocos2d::JniMethodInfo minfo;

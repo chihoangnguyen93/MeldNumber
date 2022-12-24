@@ -16,7 +16,8 @@ typedef enum : NSUInteger {
 } AdPosition;
 
 @interface AdmobIOS() <GADBannerViewDelegate, GADFullScreenContentDelegate>
-@property (nonatomic, strong) GADBannerView* bannerView;
+@property (nonatomic, strong) GADBannerView* topBannerView;
+@property (nonatomic, strong) GADBannerView* bottomBannerView;
 @property (nonatomic, strong) GADInterstitialAd* interstitialAd;
 @end
 
@@ -32,23 +33,42 @@ typedef enum : NSUInteger {
   return sAdmobManager;
 }
 
-- (void)showBannerInPosition:(int) position {
+- (void)showBanner {
   if (self.bannerId == nil || self.bannerId.length == 0) { return; }
-  
-  if (self.bannerView == nil) {
+  [self showTopBannerView];
+  [self showBottomBannerView];
+}
+
+- (void)showTopBannerView{
+  if (self.topBannerView == nil) {
     CGRect vFrame = [self.getWindow rootViewController].view.frame;
     GADAdSize size =  GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(vFrame.size.width, 50);
-    self.bannerView = [[GADBannerView alloc] initWithAdSize: size origin: CGPointZero];
-    [self.bannerView setAdUnitID: self.bannerId];
-    [self.bannerView setDelegate: self];
-    [self.bannerView setRootViewController: [self.getWindow rootViewController]];
-    [[self.getWindow rootViewController].view addSubview:  self.bannerView];
-    
+    self.topBannerView = [[GADBannerView alloc] initWithAdSize: size origin: CGPointZero];
+    [self.topBannerView setAdUnitID: self.bannerId];
+    [self.topBannerView setDelegate: self];
+    [self.topBannerView setRootViewController: [self.getWindow rootViewController]];
+    [[self.getWindow rootViewController].view addSubview:  self.topBannerView];
     GADRequest* request = [GADRequest request];
-    [self.bannerView loadRequest: request];
+    [self.topBannerView loadRequest: request];
   }
-  [self.bannerView setFrame: [self getFrameFromPosition: position]];
-  [self.bannerView setHidden: NO];
+  [self.topBannerView setFrame: [self getFrameFromPosition: TopCenter]];
+  [self.topBannerView setHidden: NO];
+}
+
+- (void)showBottomBannerView{
+  if (self.bottomBannerView == nil) {
+    CGRect vFrame = [self.getWindow rootViewController].view.frame;
+    GADAdSize size =  GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight(vFrame.size.width, 50);
+    self.bottomBannerView = [[GADBannerView alloc] initWithAdSize: size origin: CGPointZero];
+    [self.bottomBannerView setAdUnitID: self.bannerId];
+    [self.bottomBannerView setDelegate: self];
+    [self.bottomBannerView setRootViewController: [self.getWindow rootViewController]];
+    [[self.getWindow rootViewController].view addSubview:  self.bottomBannerView];
+    GADRequest* request = [GADRequest request];
+    [self.bottomBannerView loadRequest: request];
+  }
+  [self.bottomBannerView setFrame: [self getFrameFromPosition: BottomCenter]];
+  [self.bottomBannerView setHidden: NO];
 }
 
 - (void)loadInterstitial:(void (^)(BOOL finished))completionHandler {
@@ -99,7 +119,7 @@ typedef enum : NSUInteger {
 
 - (CGRect)getFrameFromPosition:(int)position {
   CGRect rootViewFrame = [self.getWindow rootViewController].view.frame;
-  CGRect bannerFrame = self.bannerView.frame;
+  CGRect bannerFrame = self.topBannerView.frame;
   CGPoint point;
   switch (position) {
     case TopCenter:

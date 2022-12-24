@@ -53,9 +53,7 @@ public class AppActivity extends Cocos2dxActivity {
         adManager.showBannerAd();
     }
 
-    public static void showInterstitial() {
-        adManager.showFullscreenAd();
-    }
+    public static void showInterstitial() { adManager.showInterstitial(); }
 
     @Override
     public void onDestroy() {

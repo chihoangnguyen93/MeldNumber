@@ -17,7 +17,7 @@
 
 + (AdmobIOS*)sharedAdmob;
 
-- (void)showBannerInPosition:(int)position;
+- (void)showBanner;
 - (void)loadInterstitial :(void (^)(BOOL finished))completionHandler;
 - (void)showInterstitial :(void (^)(BOOL finished))completionHandler;
 @end

@@ -45,7 +45,6 @@ private:
   void updateHighestEarnPoint(int newEarnPoint);
   void showFullScreenAdvertisement(const char* key, int frequency);
   void displayHowToPlayLayer();
-  void displayShowAdToGetMoreSkipTurn();
   
   LayerColor* createLayerColor();
 public:
