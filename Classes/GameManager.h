@@ -43,7 +43,7 @@ private:
   void visitNeighbor(NumberNode* number, queue<NumberNode*> &queue,
                      vector<NumberNode*> &listVisitedNumber,
                      map<Vec2, int> &matrixVisited,
-                     const Vec2& parentPosition);
+                     const Vec2& nextNeighborPosition);
   void mergeSameNumber(const vector<NumberNode*> listSameNumber, function<void()> completion);
   
   int getIndexInListNumberOnGameBoard(const Vec2& matrix);

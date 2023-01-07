@@ -236,10 +236,10 @@ void GameManager::visitNeighbor(NumberNode* number,
                                 queue<NumberNode*> &queue,
                                 vector<NumberNode*> &listVisitedNumber,
                                 map<Vec2, int> &matrixVisited,
-                                const Vec2& parentPosition) {
+                                const Vec2& nextNeighborPosition) {
   if(number != nullptr && matrixVisited.find(number->getMatrix()) == matrixVisited.end()) {
     queue.push(number);
-    number->parentPosition = parentPosition;
+    number->nextNeighborPosition = nextNeighborPosition;
     listVisitedNumber.push_back(number);
     matrixVisited[number->getMatrix()] = number->getValue();
   }
@@ -287,8 +287,8 @@ void GameManager::mergeSameNumber(const vector<NumberNode*> listSameNumber, func
   
   while (iterator > 0) {
     NumberNode* number = listSameNumber.at(iterator);
-    totalSequenceDelayTime += (TIME_MOVE_ANIMATION_NUMBER + DELAY_BETWEEN_TWO_ANIMATION);
-    number->moveAndHide(number->parentPosition, totalSequenceDelayTime, TIME_MOVE_ANIMATION_NUMBER, DELAY_BETWEEN_TWO_ANIMATION);
+    totalSequenceDelayTime += (TIME_NUMBER_MOVE_ANIMATION + DELAY_BETWEEN_TWO_ANIMATION);
+    number->moveAndHide(number->nextNeighborPosition, totalSequenceDelayTime, TIME_NUMBER_MOVE_ANIMATION, DELAY_BETWEEN_TWO_ANIMATION);
     deleteNumberOutOfGameBoard(number);
     iterator -= 1;
   }
@@ -308,12 +308,16 @@ void GameManager::mergeSameNumber(const vector<NumberNode*> listSameNumber, func
 }
 
 int GameManager::getMaximumNumberOnGameBoard() {
-  int result = 0;
+  int result = 1;
+  int count = 0;
   for(int index = 0; index < listNumberOnGameBoard.size(); index++) {
     int value = listNumberOnGameBoard[index]->getValue();
+    if(value == TOTAL_GAME_BOARD_CELL + 1) { count += 1; }
     result = max(value, result);
   }
-  return result;
+  /// This logic to make sure the number 6 will only is random when we have more than 6 number on game board
+  if(count >= MIN_SAME_NUMBER - 1) { return result; }
+  return std::min(result, TOTAL_GAME_BOARD_CELL);
 }
 
 bool GameManager::isHavingTwoSequenceEmptyCell() {

@@ -17,7 +17,7 @@ vector<int> probability = vector<int> {
 };
 
 NextNumberFactory::NextNumberFactory() {
-  totalSingleNumber = 0;
+  totalCurrentSingleNumberOnScreen = 0;
   buckets = probability;
 }
 
@@ -34,7 +34,7 @@ vector<int> NextNumberFactory::build(int currentMaxNumber, bool havePairEmptySqu
       return vector<int> { secondNumber, firstNumber };
     }
   } else {
-    totalSingleNumber += 1;
+    totalCurrentSingleNumberOnScreen += 1;
     return vector<int>{ getRandomNumber(1, maxNumber) };
   }
 }
@@ -45,8 +45,8 @@ bool NextNumberFactory::shouldGeneratePairNumber(int maxNumber, bool havePairEmp
 }
 
 int NextNumberFactory::adjustMaximumNumber(int currentMaxNumber) {
-  if(currentMaxNumber > 1) { return min(currentMaxNumber, TOTAL_GAME_BOARD_CELL); }
-  return totalSingleNumber == 0 ? 1 : 2;
+  if(currentMaxNumber > 1) { return currentMaxNumber; }
+  return totalCurrentSingleNumberOnScreen == 0 ? 1 : 2;
 }
 
 bool NextNumberFactory::isOddNumberWhenRandom() {

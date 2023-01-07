@@ -16,10 +16,9 @@ using namespace std;
 class ColorFactory {
 private:
   map<int, Color3B> colorNumberBucket;
-  vector<Color4B> colorCellBucket;
   static ColorFactory* instance;
-public:
   ColorFactory();
+public:
   virtual ~ColorFactory();
   
   /* Singletons should not be cloneable. */

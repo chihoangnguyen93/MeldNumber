@@ -39,8 +39,6 @@ private:
   void handleTapOnRotateButton(Ref* pSender);
   void handleTapOnResetGame(Ref* pSender);
   void handleTapOnSkipButton(Ref* pSender);
-  void handleTapOnNoButton(Ref* pSender);
-  void handleTapOnOkayButton(Ref* pSender);
   
   void updateHighestEarnPoint(int newEarnPoint);
   void showFullScreenAdvertisement(const char* key, int frequency);

@@ -21,18 +21,18 @@
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		861A985C29691EAB009A2A91 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985029691EAB009A2A91 /* nanopb.xcframework */; };
+		861A985D29691EAB009A2A91 /* Promises-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 861A985229691EAB009A2A91 /* Promises-LICENSE */; };
+		861A985E29691EAB009A2A91 /* NanoPB-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 861A985329691EAB009A2A91 /* NanoPB-LICENSE */; };
+		861A985F29691EAB009A2A91 /* OpenMeasurement-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 861A985429691EAB009A2A91 /* OpenMeasurement-LICENSE */; };
+		861A986029691EAB009A2A91 /* GoogleUtilities-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 861A985529691EAB009A2A91 /* GoogleUtilities-LICENSE */; };
+		861A986129691EAB009A2A91 /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985629691EAB009A2A91 /* GoogleAppMeasurementIdentitySupport.xcframework */; };
+		861A986229691EAB009A2A91 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985729691EAB009A2A91 /* PromisesObjC.xcframework */; };
+		861A986329691EAB009A2A91 /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985829691EAB009A2A91 /* UserMessagingPlatform.xcframework */; };
+		861A986429691EAB009A2A91 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985929691EAB009A2A91 /* GoogleMobileAds.xcframework */; };
+		861A986529691EAB009A2A91 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985A29691EAB009A2A91 /* GoogleAppMeasurement.xcframework */; };
+		861A986629691EAB009A2A91 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861A985B29691EAB009A2A91 /* GoogleUtilities.xcframework */; };
 		863924852945971A00796307 /* skip_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 863924842945971A00796307 /* skip_button.png */; };
-		867EB4622956E55B00652509 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB4562956E55B00652509 /* nanopb.xcframework */; };
-		867EB4632956E55B00652509 /* Promises-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 867EB4582956E55B00652509 /* Promises-LICENSE */; };
-		867EB4642956E55B00652509 /* NanoPB-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 867EB4592956E55B00652509 /* NanoPB-LICENSE */; };
-		867EB4652956E55B00652509 /* OpenMeasurement-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 867EB45A2956E55B00652509 /* OpenMeasurement-LICENSE */; };
-		867EB4662956E55B00652509 /* GoogleUtilities-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 867EB45B2956E55B00652509 /* GoogleUtilities-LICENSE */; };
-		867EB4672956E55B00652509 /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB45C2956E55B00652509 /* GoogleAppMeasurementIdentitySupport.xcframework */; };
-		867EB4682956E55B00652509 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB45D2956E55B00652509 /* PromisesObjC.xcframework */; };
-		867EB4692956E55B00652509 /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB45E2956E55B00652509 /* UserMessagingPlatform.xcframework */; };
-		867EB46A2956E55B00652509 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB45F2956E55B00652509 /* GoogleMobileAds.xcframework */; };
-		867EB46B2956E55B00652509 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB4602956E55B00652509 /* GoogleAppMeasurement.xcframework */; };
-		867EB46C2956E55B00652509 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867EB4612956E55B00652509 /* GoogleUtilities.xcframework */; };
 		868E5A622944A97F0087D208 /* replay_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 868E5A5F2944A97F0087D208 /* replay_button.png */; };
 		868E5A632944A97F0087D208 /* rotate_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 868E5A602944A97F0087D208 /* rotate_button.png */; };
 		868E5A642944A97F0087D208 /* reset_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 868E5A612944A97F0087D208 /* reset_button.png */; };
@@ -108,18 +108,18 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		861A985029691EAB009A2A91 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		861A985229691EAB009A2A91 /* Promises-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Promises-LICENSE"; sourceTree = "<group>"; };
+		861A985329691EAB009A2A91 /* NanoPB-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NanoPB-LICENSE"; sourceTree = "<group>"; };
+		861A985429691EAB009A2A91 /* OpenMeasurement-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OpenMeasurement-LICENSE"; sourceTree = "<group>"; };
+		861A985529691EAB009A2A91 /* GoogleUtilities-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GoogleUtilities-LICENSE"; sourceTree = "<group>"; };
+		861A985629691EAB009A2A91 /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
+		861A985729691EAB009A2A91 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		861A985829691EAB009A2A91 /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
+		861A985929691EAB009A2A91 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMobileAds.xcframework; sourceTree = "<group>"; };
+		861A985A29691EAB009A2A91 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		861A985B29691EAB009A2A91 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
 		863924842945971A00796307 /* skip_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip_button.png; sourceTree = "<group>"; };
-		867EB4562956E55B00652509 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
-		867EB4582956E55B00652509 /* Promises-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Promises-LICENSE"; sourceTree = "<group>"; };
-		867EB4592956E55B00652509 /* NanoPB-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NanoPB-LICENSE"; sourceTree = "<group>"; };
-		867EB45A2956E55B00652509 /* OpenMeasurement-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OpenMeasurement-LICENSE"; sourceTree = "<group>"; };
-		867EB45B2956E55B00652509 /* GoogleUtilities-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GoogleUtilities-LICENSE"; sourceTree = "<group>"; };
-		867EB45C2956E55B00652509 /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
-		867EB45D2956E55B00652509 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
-		867EB45E2956E55B00652509 /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
-		867EB45F2956E55B00652509 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMobileAds.xcframework; sourceTree = "<group>"; };
-		867EB4602956E55B00652509 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
-		867EB4612956E55B00652509 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
 		868E5A5F2944A97F0087D208 /* replay_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replay_button.png; sourceTree = "<group>"; };
 		868E5A602944A97F0087D208 /* rotate_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rotate_button.png; sourceTree = "<group>"; };
 		868E5A612944A97F0087D208 /* reset_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset_button.png; sourceTree = "<group>"; };
@@ -177,21 +177,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				868E5B07294521EA0087D208 /* GameController.framework in Frameworks */,
-				867EB4692956E55B00652509 /* UserMessagingPlatform.xcframework in Frameworks */,
+				861A986329691EAB009A2A91 /* UserMessagingPlatform.xcframework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
-				867EB46B2956E55B00652509 /* GoogleAppMeasurement.xcframework in Frameworks */,
+				861A986529691EAB009A2A91 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				867EB4622956E55B00652509 /* nanopb.xcframework in Frameworks */,
+				861A985C29691EAB009A2A91 /* nanopb.xcframework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				867EB4682956E55B00652509 /* PromisesObjC.xcframework in Frameworks */,
-				867EB46A2956E55B00652509 /* GoogleMobileAds.xcframework in Frameworks */,
+				861A986229691EAB009A2A91 /* PromisesObjC.xcframework in Frameworks */,
+				861A986429691EAB009A2A91 /* GoogleMobileAds.xcframework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				867EB4672956E55B00652509 /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */,
-				867EB46C2956E55B00652509 /* GoogleUtilities.xcframework in Frameworks */,
+				861A986129691EAB009A2A91 /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */,
+				861A986629691EAB009A2A91 /* GoogleUtilities.xcframework in Frameworks */,
 				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
@@ -223,7 +223,7 @@
 		1AF87B461F6F77D6007BE51C /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				867EB4552956E55B00652509 /* GoogleMobileAdsSdkiOS-9.14.0 */,
+				861A984F29691EAB009A2A91 /* GoogleMobileAdsSdkiOS-9.14.0 */,
 				868E5A982944DC1A0087D208 /* meld-number.png */,
 				1A88B2631FC3D9C9005C14AE /* Images.xcassets */,
 				1AF87B471F6F77D6007BE51C /* AppController.h */,
@@ -335,28 +335,28 @@
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
-		867EB4552956E55B00652509 /* GoogleMobileAdsSdkiOS-9.14.0 */ = {
+		861A984F29691EAB009A2A91 /* GoogleMobileAdsSdkiOS-9.14.0 */ = {
 			isa = PBXGroup;
 			children = (
-				867EB4562956E55B00652509 /* nanopb.xcframework */,
-				867EB4572956E55B00652509 /* Licenses */,
-				867EB45C2956E55B00652509 /* GoogleAppMeasurementIdentitySupport.xcframework */,
-				867EB45D2956E55B00652509 /* PromisesObjC.xcframework */,
-				867EB45E2956E55B00652509 /* UserMessagingPlatform.xcframework */,
-				867EB45F2956E55B00652509 /* GoogleMobileAds.xcframework */,
-				867EB4602956E55B00652509 /* GoogleAppMeasurement.xcframework */,
-				867EB4612956E55B00652509 /* GoogleUtilities.xcframework */,
+				861A985029691EAB009A2A91 /* nanopb.xcframework */,
+				861A985129691EAB009A2A91 /* Licenses */,
+				861A985629691EAB009A2A91 /* GoogleAppMeasurementIdentitySupport.xcframework */,
+				861A985729691EAB009A2A91 /* PromisesObjC.xcframework */,
+				861A985829691EAB009A2A91 /* UserMessagingPlatform.xcframework */,
+				861A985929691EAB009A2A91 /* GoogleMobileAds.xcframework */,
+				861A985A29691EAB009A2A91 /* GoogleAppMeasurement.xcframework */,
+				861A985B29691EAB009A2A91 /* GoogleUtilities.xcframework */,
 			);
 			path = "GoogleMobileAdsSdkiOS-9.14.0";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
-		867EB4572956E55B00652509 /* Licenses */ = {
+		861A985129691EAB009A2A91 /* Licenses */ = {
 			isa = PBXGroup;
 			children = (
-				867EB4582956E55B00652509 /* Promises-LICENSE */,
-				867EB4592956E55B00652509 /* NanoPB-LICENSE */,
-				867EB45A2956E55B00652509 /* OpenMeasurement-LICENSE */,
-				867EB45B2956E55B00652509 /* GoogleUtilities-LICENSE */,
+				861A985229691EAB009A2A91 /* Promises-LICENSE */,
+				861A985329691EAB009A2A91 /* NanoPB-LICENSE */,
+				861A985429691EAB009A2A91 /* OpenMeasurement-LICENSE */,
+				861A985529691EAB009A2A91 /* GoogleUtilities-LICENSE */,
 			);
 			path = Licenses;
 			sourceTree = "<group>";
@@ -449,17 +449,17 @@
 			files = (
 				863924852945971A00796307 /* skip_button.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
-				867EB4662956E55B00652509 /* GoogleUtilities-LICENSE in Resources */,
+				861A985D29691EAB009A2A91 /* Promises-LICENSE in Resources */,
+				861A986029691EAB009A2A91 /* GoogleUtilities-LICENSE in Resources */,
 				868E5A992944DC1A0087D208 /* meld-number.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
-				867EB4652956E55B00652509 /* OpenMeasurement-LICENSE in Resources */,
 				868E5A622944A97F0087D208 /* replay_button.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				868E5A642944A97F0087D208 /* reset_button.png in Resources */,
+				861A985E29691EAB009A2A91 /* NanoPB-LICENSE in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
-				867EB4642956E55B00652509 /* NanoPB-LICENSE in Resources */,
 				868E5A632944A97F0087D208 /* rotate_button.png in Resources */,
-				867EB4632956E55B00652509 /* Promises-LICENSE in Resources */,
+				861A985F29691EAB009A2A91 /* OpenMeasurement-LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ using namespace std;
 
 class NextNumberFactory {
 private:
-  int totalSingleNumber;
+  int totalCurrentSingleNumberOnScreen;
   vector<int> buckets;
   bool isOddNumberWhenRandom();
   bool shouldGeneratePairNumber(int maxNumber, bool havePairEmptySquare);

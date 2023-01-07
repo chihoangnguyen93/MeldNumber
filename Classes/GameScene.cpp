@@ -33,6 +33,8 @@ Scene* GameScene::createScene(bool shouldShowGuidLine) {
 
 bool GameScene::init(bool shouldShowGuidLine) {
   if (!Layer::init()) { return false; }
+
+  ColorFactory::GetInstance()->shuffleColor();
   
   winSize = Director::getInstance()->getWinSize();
   
@@ -45,9 +47,7 @@ bool GameScene::init(bool shouldShowGuidLine) {
   gameManager->generateNextNumber();
   
   /// Don't show guideline screen reset and game over screen
-  if(shouldShowGuidLine) {
-    displayHowToPlayLayer();
-  }
+  if(shouldShowGuidLine) { displayHowToPlayLayer(); }
   return true;
 }
 
@@ -135,7 +135,7 @@ void GameScene::registerTouchEventHandler() {
 
 void GameScene::handleTapOnRotateButton(Ref* pSender) {
   if(gameManager->currentSupplyType() == SINGLE_NUMBER) { return; }
-  rotateNumberButton->runAction(RotateBy::create(TIME_ROTATE_BUTTON, 90.0));
+  rotateNumberButton->runAction(RotateBy::create(TIME_BUTTON_RUN_ROTATE, 90.0));
   gameManager->rotateSupplyBoard();
 }
 
@@ -182,9 +182,12 @@ void GameScene::displayHowToPlayLayer() {
   touchGuideLayer->setSwallowTouches(true);
   touchGuideLayer->onTouchBegan = [=](Touch* mtouch, Event* pEvent){
     guideLayer->removeFromParent();
-    /// Show admod
-    AdmobManager::getInstance()->showBanner();
-    showFullScreenAdvertisement(AD_OPEN_GAME_SCENE_KEY, AD_OPEN_GAME_SCENE_FREQUENCY);
+    
+    /// Display Admod after 10s disappear of guide later
+    this->unschedule("show_admod");
+    this->scheduleOnce([=]( float dt){
+      AdmobManager::getInstance()->showBanner();
+    }, 10.0f, "show_admod");
     return true;
   };
   Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchGuideLayer, guideLayer);
@@ -246,6 +249,7 @@ void GameScene::handleTapOnSkipButton(Ref* pSender) {
   if(numberSkip >= 0) {
     gameManager->skipCurrentNumber();
   } else {
+    /// TODO: Show ask watch video for more hint
   }
 }
 
@@ -262,19 +266,6 @@ void GameScene::showFullScreenAdvertisement(const char* key, int frequency) {
   } else {
     UserDefault::getInstance()->setIntegerForKey(key, currentCount + 1);
   }
-}
-
-
-void GameScene::handleTapOnNoButton(Ref* pSender) {
-  this->removeChildByTag(AD_POP_UP);
-}
-
-void GameScene::handleTapOnOkayButton(Ref* pSender) {
-  this->removeChildByTag(AD_POP_UP);
-  AdmobManager::getInstance()->showInterstitial([&, this](bool finished) {
-    this->numberSkip = finished == true ? 1 : 0;
-    this->skipNumberButton->updateBadge(this->numberSkip);
-  });
 }
 
 LayerColor* GameScene::createLayerColor() {

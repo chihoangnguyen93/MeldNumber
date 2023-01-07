@@ -16,7 +16,7 @@ using namespace std;
 
 class CustomButton: public cocos2d::Node {
 public:  
-  static CustomButton* create(const string &fileName, const function<void (Ref *)> &yesFunc);
+  static CustomButton* create(const string &fileName, const function<void (Ref *)> &mainFunc);
   void setBadge(int value, const std::string& fontFile, float fontSize);
   void updateBadge(int value);
 private:

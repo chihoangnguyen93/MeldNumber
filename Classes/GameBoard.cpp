@@ -50,7 +50,7 @@ pair<Vec2, Vec2> GameBoard::getMatrixForPairNumber(pair<NumberNode*, NumberNode*
   Vec2 position = Vec2(touchPosition.x - this->getPositionX(), touchPosition.y - this->getPositionY());
   Vec2 firstPos, secondPos;
   
-  if(pairNumber.first->isHeadOfNumber) {
+  if(pairNumber.first->isHeadOfPairNumber) {
     firstPos = Vec2(position.x, position.y);
     if(pairNumber.first->getPositionX() == pairNumber.second->getPositionX()) {
       if(pairNumber.first->getPositionY() > pairNumber.second->getPositionY()) {

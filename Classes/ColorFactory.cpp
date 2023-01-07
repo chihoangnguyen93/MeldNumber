@@ -35,17 +35,13 @@ void ColorFactory::shuffleColor() {
   shuffle(colorNumbers.begin(),
           colorNumbers.end(),
           std::default_random_engine(unsigned(std::chrono::system_clock::now().time_since_epoch().count())));
+
   colorNumberBucket[1] = colorNumbers[0];
   colorNumberBucket[2] = colorNumbers[1];
   colorNumberBucket[3] = colorNumbers[2];
   colorNumberBucket[4] = colorNumbers[3];
   colorNumberBucket[5] = colorNumbers[4];
   colorNumberBucket[6] = colorNumbers[5];
-  
-  colorCellBucket = vector<Color4B>{Color4B(52, 43, 56, 255), Color4B(128, 189, 171, 255)};
-  shuffle(colorCellBucket.begin(),
-          colorCellBucket.end(),
-          std::default_random_engine(unsigned(std::chrono::system_clock::now().time_since_epoch().count())));
 }
 
 Color4B ColorFactory::getBackgroundColor() {
@@ -54,7 +50,7 @@ Color4B ColorFactory::getBackgroundColor() {
 
 Color4B ColorFactory::getCellColorOfGameBoard(int row, int column) {
   int index = row + column * TOTAL_GAME_BOARD_CELL;
-  return index % 2 == 0 ? colorCellBucket[0] : colorCellBucket[1];
+  return index % 2 == 0 ? Color4B(52, 43, 56, 255) : Color4B(128, 189, 171, 255);
 }
 
 Color3B ColorFactory::getTitleLabelColor() {

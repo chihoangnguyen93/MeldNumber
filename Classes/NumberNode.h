@@ -21,8 +21,8 @@ private:
   Label *numberLabel;
   LayerColor* bgColorLayer;
 public:
-  bool isHeadOfNumber;      /// use only for pair number to decided which is head of pair number
-  Vec2 parentPosition;      /// use when run animation of same value number
+  bool isHeadOfPairNumber;            /// use only for pair number to decided which is head of pair number
+  Vec2 nextNeighborPosition;      /// use when run animation of same value number
   
   NumberNode(Size size, int value, Color3B textNumberColor, Color4B colorLayer);
   virtual ~NumberNode();

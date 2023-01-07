@@ -103,8 +103,8 @@ void SupplyBoard::moveNumberByTouch(const Vec2& touchPosition) {
     Vec2 firstPos, secondPos;
     
     if(pairNumber.first->isTouchingNumber(position)) {
-      pairNumber.first->isHeadOfNumber = true;
-      pairNumber.second->isHeadOfNumber = false;
+      pairNumber.first->isHeadOfPairNumber = true;
+      pairNumber.second->isHeadOfPairNumber = false;
       
       firstPos = Vec2(position.x - WIDTH_HEIGHT_CELL/2.0, position.y - WIDTH_HEIGHT_CELL/2.0);
       
@@ -122,8 +122,8 @@ void SupplyBoard::moveNumberByTouch(const Vec2& touchPosition) {
         }
       }
     } else {
-      pairNumber.first->isHeadOfNumber = false;
-      pairNumber.second->isHeadOfNumber = true;
+      pairNumber.first->isHeadOfPairNumber = false;
+      pairNumber.second->isHeadOfPairNumber = true;
       
       secondPos = Vec2(position.x - WIDTH_HEIGHT_CELL/2.0, position.y - WIDTH_HEIGHT_CELL/2.0);
       

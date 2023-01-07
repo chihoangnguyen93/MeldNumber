@@ -15,11 +15,11 @@ const float CUSTOM_BUTTON_OFFSET_Y = -16.0f;
 const float TOUCH_ANIMATION_SPEED = 0.04f;
 }
 
-CustomButton* CustomButton::create(const string &fileName, const function<void (Ref *)> &yesFunc) {
+CustomButton* CustomButton::create(const string &fileName, const function<void (Ref *)> &mainFunc) {
   CustomButton *node = new (std::nothrow)CustomButton();
   if(node) {
     node->initCustomButton(fileName);
-    node->mainFunc = yesFunc;
+    node->mainFunc = mainFunc;
     node->init();
     node->autorelease();
     return node;
