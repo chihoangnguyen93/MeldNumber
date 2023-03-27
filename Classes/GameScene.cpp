@@ -254,6 +254,7 @@ void GameScene::handleTapOnSkipButton(Ref* pSender) {
 }
 
 void GameScene::handleTapOnResetGame(Ref* pSender) {
+  this->updateHighestEarnPoint(gameManager->getCurrentPoint());
   showFullScreenAdvertisement(AD_CLICK_RESET_KEY, AD_CLICK_RESET_FREQUENCY);
   Director::getInstance()->replaceScene(GameScene::createScene(false));
 }

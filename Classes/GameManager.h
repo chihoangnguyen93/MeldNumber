@@ -62,6 +62,7 @@ public:
   void setSupplyBoard(SupplyBoard* SupplyBoard);
   void checkGameBoardAfterAddNewNumber(NumberNode* number, function<void()> completion);
   int currentSupplyType();
+  int getCurrentPoint();
 };
 
 #endif /* GameManager_h */

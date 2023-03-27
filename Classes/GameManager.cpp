@@ -23,6 +23,10 @@ GameManager::~GameManager() {
   listNumberOnGameBoard.clear();
 }
 
+int GameManager::getCurrentPoint() {
+  return totalEarnPoint;
+}
+
 void GameManager::setGameBoard(GameBoard* gameBoard) {
   this->gameBoard = gameBoard;
 }
